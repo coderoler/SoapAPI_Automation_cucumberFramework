@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transaction>
+	<body>
+		<request>
+			<tranTyp>批量业务现存</tranTyp>
+			<acctNm>0085213560</acctNm>
+			<acctNo>6225885517843413</acctNo>
+			<avlBal>201958.65</avlBal>
+			<acctTyp>0</acctTyp>
+			<tranTime>20170801101030</tranTime>
+			<currencyTyp>CNY</currencyTyp>
+			<tranDesc></tranDesc>
+			<bal>201958.65</bal>
+			<tranAmt>100000.00</tranAmt>
+		</request>
+	</body>
+	<header>
+		<msg>
+			<sndTm>101019</sndTm>
+			<msgCd>WCS0000200</msgCd>
+			<seqNb>632376531000009</seqNb>
+			<sndMbrCd>5200</sndMbrCd>
+			<rcvMbrCd>0000</rcvMbrCd>
+			<sndDt>20170821</sndDt>
+			<sndAppCd>CBS</sndAppCd>
+			<rcvAppCd>WCS</rcvAppCd>
+			<callTyp>SYN</callTyp>
+		</msg>
+		<ver>1.0</ver>
+		<pnt>
+			<sndTm>101216</sndTm>
+			<sndMbrCd>0000</sndMbrCd>
+			<rcvMbrCd>0000</rcvMbrCd>
+			<sndDt>20170809</sndDt>
+			<sndAppCd>ESB</sndAppCd>
+			<rcvAppCd>WCS</rcvAppCd>
+		</pnt>
+	</header>
+</transaction>

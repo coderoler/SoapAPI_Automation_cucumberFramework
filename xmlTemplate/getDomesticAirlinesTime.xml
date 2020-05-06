@@ -1,0 +1,15 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://WebXml.com.cn/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getDomesticAirlinesTime>
+         <!--Optional:-->
+         <web:startCity>aaaa</web:startCity>
+         <!--Optional:-->
+         <web:lastCity>aaaa</web:lastCity>
+         <!--Optional:-->
+         <web:theDate>aaa</web:theDate>
+         <!--Optional:-->
+         <web:userID></web:userID>
+      </web:getDomesticAirlinesTime>
+   </soapenv:Body>
+</soapenv:Envelope>
