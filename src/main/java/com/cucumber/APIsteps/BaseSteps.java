@@ -14,21 +14,6 @@ public class BaseSteps {
 	static {
 		String env = System.getProperty("test_env");
 		String site = System.getProperty("test_site");
-//		System.out.println("+===========================================================================================================+");
-//		System.out.println("|                                                                                                           |");
-//		System.out.println("|                                                                                                           |");
-//		System.out.println("|              ##           ##           ##    ####               ####       ###########                    |");
-//		System.out.println("|              ##           ##           ##    #####             #####      ###        ###                  |");
-//		System.out.println("|              ##          ####          ##    ##  ##           ##  ##     ###          ##                  |");
-//		System.out.println("|              ##         ##  ##         ##    ##   ##         ##   ##     ###                              |");
-//		System.out.println("|               ##       ##    ##       ##     ##    ##       ##    ##      #############                   |");
-//		System.out.println("|                ##     ##      ##     ##      ##     ##     ##     ##       #############                  |");
-//		System.out.println("|                 ##   ##        ##   ##       ##      ##   ##      ##                  ###                 |");
-//		System.out.println("|                  #####          #####        ##       #####       ##      ##          ###                 |");
-//		System.out.println("|                   ###            ###         ##        ###        ##      ###        ###                  |");
-//		System.out.println("|                   ###            ###         ##        ###        ##       ############                   |");
-//		System.out.println("|                                                                                                           |");
-//		System.out.println("|                                                                                                           |");
 		System.out.println("+================================   Initialize Test Environment   ==========================================+");
 		System.out.println("+===============                Run Automation in " + env  + " Test Environment           ===========================+" );
 		System.out.println("+===============                Run Automation in " + site + " Test Site               ===========================+" );
