@@ -1,4 +1,4 @@
-package com.cucumber.parameters;
+package com.cucumberframework.parameters;
 
 public enum Environment {
 	loc("loc"),

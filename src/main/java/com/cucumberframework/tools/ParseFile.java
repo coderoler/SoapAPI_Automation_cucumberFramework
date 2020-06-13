@@ -1,4 +1,4 @@
-package com.cucumber.filetools;
+package com.cucumberframework.tools;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,13 +9,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
-public class parseFile {
+import com.cucumberframework.APIsteps.BaseSteps;
 
-	public static String getXML(String name) {
+public class ParseFile {
+
+	public static String loadXML(String name) {
 		String temp = null;
 		StringBuffer xmlParam = new StringBuffer();
-		File file = new File(
-				System.getProperty("user.dir") + File.separator + "xmlTemplate" + File.separator + name + ".xml");
+		File file = new File(System.getProperty("user.dir") + File.separator + "xmlTemplate" + File.separator + BaseSteps.xmlTempleteFolder
+				+ File.separator + name + ".xml");
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			while ((temp = reader.readLine()) != null) {

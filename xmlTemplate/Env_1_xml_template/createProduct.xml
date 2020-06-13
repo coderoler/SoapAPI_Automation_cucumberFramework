@@ -1,0 +1,25 @@
+<soapenv:Envelope
+	xmlns:soapenv="http:schemas.xmlsoap.org/soap/envelope/"
+	xmlns:fac="http://www.wodetian.com">
+	<soapenv:Header />
+	<soapenv:Body>
+		<fac:createProduct>
+			<arg0>
+				<apiModel>
+					<apiId></apiId>
+					<merchantId></merchantId>
+				</apiModel>
+				<!--Zero or more repetitions -->
+				<packingModeList>
+					<updateType></updateType>
+					<storeProductCd></storeProductCd>
+				</packingModeList>
+				<!--Zero or more repetitions -->
+				<productModelList>
+					<updateType></updateType>
+					<commonProductCd></commonProductCd>
+				</productModelList>
+			</arg0>
+		</fac:createProduct>
+	</soapenv:Body>
+</soapenv:Envelope>

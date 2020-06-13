@@ -1,4 +1,4 @@
-package com.cucumber.APIconnection;
+package com.cucumberframework.APIconnection;
 
 import static com.jayway.restassured.RestAssured.given;
 
