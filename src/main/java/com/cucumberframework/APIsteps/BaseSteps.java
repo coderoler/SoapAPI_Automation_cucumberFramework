@@ -3,13 +3,21 @@ package com.cucumberframework.APIsteps;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.WebDriver;
+
 import com.cucumberframework.APIconnection.APIConnection;
+import com.cucumberframework.parameters.Environment;
+import com.cucumberframework.seleniumlibrary.PageObject;
+import com.cucumberframework.seleniumlibrary.SeleniumLibrary;
 
 public class BaseSteps {
 	
 	private static String env;
 	private static String site;
 	public static String xmlTempleteFolder;
+	protected static String proxy;
+	public WebDriver driver;
+	public static PageObject po;
 	
 	static {
 		env = System.getProperty("test_env");
@@ -19,24 +27,23 @@ public class BaseSteps {
 		System.out.println("+===============                Run Automation in " + site + " Test Site               ===========================+" );
 		System.out.println("+===========================================================================================================+");
 		initializeXmlTempletePath(site);
+		proxy = env.contains("stg") ? Environment.STG.getTemp() : Environment.LOC.getTemp();
 		
-		//TODO
-		//加载配置文件给公有变量，如endpoint，proxy等
 	}
 //	private Logger logger = Logger.getLogger(BaseSteps.class);
 	APIConnection connection;
 	Map<String, String> header = new HashMap<String, String>();
 
-	
-	
-	public String proxy;
-	public void beforeSuit() {
+	public void before() {
 		header = initializeHeader();
 		connection = APIConnection.getInstance(header,proxy);
+		driver = SeleniumLibrary.setUpDriver(proxy);
+		po = new PageObject(driver);
 	}
-
-	public void afterSuit() {
-		
+	
+	public void after() {
+		driver.close();
+		driver.quit();
 	}
 
 	public Map<String, String> initializeHeader() {

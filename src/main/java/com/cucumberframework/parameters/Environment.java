@@ -1,8 +1,8 @@
 package com.cucumberframework.parameters;
 
 public enum Environment {
-	loc("loc"),
-	stg("stg");
+	LOC("proxy1"),
+	STG("proxy2");
 
 	private Environment(String temp) {
 		this.temp = temp;

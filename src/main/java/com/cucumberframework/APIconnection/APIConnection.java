@@ -31,7 +31,13 @@ public class APIConnection extends BaseConnection {
 
 	public Response sendSOAPRequest(String URL, String paramter) {
 		System.out.println("#################################### Request ####################################");
-		Response response = given().headers(header).body(paramter.trim()).when().log().all().post(URL);
+		Response response = given()
+							.headers(header)
+							.body(paramter.trim())
+							.when()
+							.log()
+							.all()
+							.post(URL);
 		System.out.println("################################### Response ###################################");
 		response.getBody().prettyPrint();
 		System.out.println("################################################################################");

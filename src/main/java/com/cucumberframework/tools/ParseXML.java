@@ -18,6 +18,7 @@ import com.cucumberframework.APIsteps.BaseSteps;
 
 public class ParseXML {
 
+	
 	public static Document loadXML(String fileName) {
 		Document document = null;
 		try {
@@ -30,11 +31,7 @@ public class ParseXML {
 		return document;
 	}
 
-	public static Element getNode(Element element) {
-		return element;
-	}
-
-	// TODO
+	
 	public static Document updateNodeListValue(Document document,String path, String key, String value) {
 		Element rootNode = document.getRootElement();
 		Element keyNode = rootNode.element(key);
@@ -72,7 +69,6 @@ public class ParseXML {
 		Element nodeListName = DocumentHelper.createElement(nodeName);
 		nodeListName.setContent(listNode);
 		node.add(nodeListName);
-		System.out.println(document.asXML());
 		return document;
 	}
 
@@ -87,11 +83,4 @@ public class ParseXML {
 		return root.asXML();
 	}
 
-	public static void main(String[] args) {
-		Document dom = ParseXML.loadXML("createProduct");
-		Document chilDom = ParseXML.loadXML("productModelList");
-//		dom = addNodeListUnderNode(dom, chilDom, "productModelList", "createProduct");
-		System.out.println(xmlToString(dom));
-
-	}
 }
