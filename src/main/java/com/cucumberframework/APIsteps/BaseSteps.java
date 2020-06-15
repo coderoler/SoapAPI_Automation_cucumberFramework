@@ -54,7 +54,7 @@ public class BaseSteps {
 	
 	public static void initializeXmlTempletePath(String siteType) {
 		switch (siteType) {
-		case "ichiba":
+		case "woqunima":
 			xmlTempleteFolder = "Env_1_xml_template";
 			break;
 
