@@ -10,13 +10,15 @@ import com.cucumberframework.parameters.Environment;
 import com.cucumberframework.seleniumlibrary.PageObject;
 import com.cucumberframework.seleniumlibrary.SeleniumLibrary;
 
+import cucumber.api.Scenario;
+
 public class BaseSteps {
 	
 	private static String env;
 	private static String site;
 	public static String xmlTempleteFolder;
 	protected static String proxy;
-	public WebDriver driver;
+	public static WebDriver driver;
 	public static PageObject po;
 	
 	static {
@@ -28,22 +30,22 @@ public class BaseSteps {
 		System.out.println("+===========================================================================================================+");
 		initializeXmlTempletePath(site);
 		proxy = env.contains("stg") ? Environment.STG.getTemp() : Environment.LOC.getTemp();
+		driver = SeleniumLibrary.setUpDriver(proxy);
 		
 	}
 //	private Logger logger = Logger.getLogger(BaseSteps.class);
 	APIConnection connection;
 	Map<String, String> header = new HashMap<String, String>();
 
-	public void before() {
+	public void before(Scenario scenario) {
 		header = initializeHeader();
 		connection = APIConnection.getInstance(header,proxy);
-		driver = SeleniumLibrary.setUpDriver(proxy);
-		po = new PageObject(driver);
+		po = PageObject.getInstance(driver);
 	}
 	
 	public void after() {
-		driver.close();
-		driver.quit();
+//		driver.close();
+//		driver.quit();
 	}
 
 	public Map<String, String> initializeHeader() {

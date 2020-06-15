@@ -1,9 +1,6 @@
 Feature: Title of your feature
   I want to use this template for my feature file
 
-  Background: 
-    Given open web page
-
   Scenario Outline: [Create product] create product with target value
     When load "createProduct" xml template
     Then update node under "packingModeList" with data table as below

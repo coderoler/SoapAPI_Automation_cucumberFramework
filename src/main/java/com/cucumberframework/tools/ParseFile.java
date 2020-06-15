@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.Properties;
 
 import com.cucumberframework.runsteps.BaseSteps;
 
@@ -16,8 +17,8 @@ public class ParseFile {
 	public static String loadXML(String name) {
 		String temp = null;
 		StringBuffer xmlParam = new StringBuffer();
-		File file = new File(System.getProperty("user.dir") + File.separator + "xmlTemplate" + File.separator + BaseSteps.xmlTempleteFolder
-				+ File.separator + name + ".xml");
+		File file = new File(System.getProperty("user.dir") + File.separator + "xmlTemplate" + File.separator
+				+ BaseSteps.xmlTempleteFolder + File.separator + name + ".xml");
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			while ((temp = reader.readLine()) != null) {
@@ -61,6 +62,31 @@ public class ParseFile {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public static Properties getProperties(String filePath) {
+		
+		try {
+			FileInputStream inputFile = new FileInputStream(filePath);
+			Properties properties = new Properties();
+			properties.load(inputFile);
+			inputFile.close();
+			return properties;
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+
+	}
+	
+	public static void main(String arg[]) {
+		
+		Properties properties = ParseFile.getProperties(System.getProperty("user.dir") + File.separator + "configure" + File.separator + "env_1.properties");
+		System.err.println(properties.get("cli"));
 	}
 
 }
