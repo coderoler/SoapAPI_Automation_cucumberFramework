@@ -1,4 +1,4 @@
-package com.cucumberframework.APIsteps;
+package com.cucumberframework.runsteps;
 
 import com.cucumberframework.seleniumlibrary.PageObject;
 

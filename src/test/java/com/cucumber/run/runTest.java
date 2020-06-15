@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/APIfeatures"},
-glue = {"com.cucumberframework.APIsteps"},
+glue = {"com.cucumberframework.runsteps"},
 plugin = {"html:target/cucumber","json:target/cucumber.json",
 		"pretty"}
 )

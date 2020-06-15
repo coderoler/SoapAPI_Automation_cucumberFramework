@@ -27,7 +27,7 @@ Feature: Title of your feature
       | nodeKey         | value |
       | updateType      |     2 |
       | commonProductCd |       |
-    Then add "productModelList" under "arg0" with value as data table
+    Then add "productModelList" under "arg0/packingModeList" with value as data table
       | nodeKey         | value             |
       | updateType      |                 3 |
       | commonProductCd | 33333333333333333 |

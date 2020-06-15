@@ -1,4 +1,4 @@
-package com.cucumberframework.APIsteps;
+package com.cucumberframework.runsteps;
 
 import java.util.HashMap;
 import java.util.Map;

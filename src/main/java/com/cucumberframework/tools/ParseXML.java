@@ -5,11 +5,12 @@ import java.util.List;
 
 import org.dom4j.Document;
 import org.dom4j.io.SAXReader;
+
+import com.cucumberframework.runsteps.BaseSteps;
+
 import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.DocumentHelper;
-
-import com.cucumberframework.APIsteps.BaseSteps;
 
 public class ParseXML {
 
@@ -59,11 +60,16 @@ public class ParseXML {
 			String path) {
 		Element rootNode = document.getRootElement();
 		Element listRootNode = documentList.getRootElement();
-		List<Element> node = rootNode.element("Body").element(xmlType).element(path).elements();
+		Element node = rootNode.element("Body").element(xmlType);
+		String[] pathList = path.split("/");
+		for(int i = 0; i< pathList.length;i++) {
+			node = node.element(pathList[i]);
+		}
+		List<Element> parentNode = node.elements();
 		List<Node> listNode = listRootNode.content();
 		Element nodeListName = DocumentHelper.createElement(nodeName);
 		nodeListName.setContent(listNode);
-		node.add(nodeListName);
+		parentNode.add(nodeListName);
 		return document;
 	}
 
