@@ -9,7 +9,7 @@
 			<acctTyp>0</acctTyp>
 			<tranTime>20170801101030</tranTime>
 			<currencyTyp>CNY</currencyTyp>
-			<tranDesc></tranDesc>
+			<tranDesc/>
 			<bal>201958.65</bal>
 			<tranAmt>100000.00</tranAmt>
 		</request>

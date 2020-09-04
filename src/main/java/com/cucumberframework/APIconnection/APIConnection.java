@@ -15,9 +15,6 @@ public class APIConnection extends BaseConnection {
 		super(header,proxy);
 	}
 
-	public APIConnection() {
-	}
-
 	public static APIConnection getInstance(Map<String, String> header,String proxy) {
 		if(instance == null) {
 			synchronized (APIConnection.class) {

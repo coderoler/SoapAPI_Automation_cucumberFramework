@@ -93,8 +93,8 @@
 				<version>2.22.2</version>
 				<configuration>
 					<systemPropertyVariables>
-						<test_env>${test_env}</test_env>
-						<test_site>${test_site}</test_site>
+						<testEnv>${test_env}</testEnv>
+						<testSite>${test_site}</testSite>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>

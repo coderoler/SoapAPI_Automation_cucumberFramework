@@ -3,9 +3,9 @@ package com.cucumberframework.runsteps;
 import java.util.List;
 import java.util.Map;
 
+import com.cucumberframework.parameters.APIEndpoint;
 import org.dom4j.Document;
 
-import com.cucumberframework.parameters.APIEndpiont;
 import com.cucumberframework.tools.ParseXML;
 import com.jayway.restassured.response.Response;
 
@@ -68,20 +68,20 @@ public class APISteps extends BaseSteps {
 		for (Map<String, String> line : keyValue) {
 			String key = line.get("nodeKey");
 			String value = line.get("value");
-			sonNodeList = ParseXML.updateNodeListValue(sonNodeList, listName, key, value);
+			sonNodeList = ParseXML.updateNodeListValue(sonNodeList, key, value);
 		}
 		requestData = ParseXML.addNodeListUnderNode(requestData, sonNodeList,xmlType, listName, path);
 	}
 	
 	@Then("^send \"([^\"]*)\" request$")
-	public void sendSoapAPIRqeuest(String functionName) {
+	public void sendSoapAPIRequest(String functionName) {
 		String URL = null;
 		switch (functionName) {
 		case "createProduct":
-			URL = APIEndpiont.CREATEPRODUCT.getEnpointURL();
+			URL = APIEndpoint.CREATE_PRODUCT.getEndpoint();
 			break;
 		case "createInbound":
-			URL = APIEndpiont.CREATEINBOUD.getEnpointURL();
+			URL = APIEndpoint.CREATE_INBOUD.getEndpoint();
 			break;
 		default:
 			break;

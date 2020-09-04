@@ -20,7 +20,7 @@ public class ParseXML {
 		try {
 			SAXReader saxReader = new SAXReader();
 			document = saxReader.read(new File(System.getProperty("user.dir") + File.separator + "xmlTemplate"
-					+ File.separator + BaseSteps.xmlTempleteFolder + File.separator + fileName + ".xml")); // 读取XML文件,获得document对象
+					+ File.separator + BaseSteps.xmlTemplateFolder + File.separator + fileName + ".xml")); // 读取XML文件,获得document对象
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -28,7 +28,7 @@ public class ParseXML {
 	}
 
 	
-	public static Document updateNodeListValue(Document document,String path, String key, String value) {
+	public static Document updateNodeListValue(Document document, String key, String value) {
 		Element rootNode = document.getRootElement();
 		Element keyNode = rootNode.element(key);
 		keyNode.setText(value);
@@ -39,8 +39,8 @@ public class ParseXML {
 		Element rootNode = document.getRootElement();
 		Element node = rootNode.element("Body").element(xmlType).element("arg0");
 		String[] pathList = path.split("/");
-		for(int i = 0; i< pathList.length;i++) {
-			node = node.element(pathList[i]);
+		for (String s : pathList) {
+			node = node.element(s);
 		}
 		node = node.element(key);
 		node.setText(value);
@@ -62,8 +62,8 @@ public class ParseXML {
 		Element listRootNode = documentList.getRootElement();
 		Element node = rootNode.element("Body").element(xmlType);
 		String[] pathList = path.split("/");
-		for(int i = 0; i< pathList.length;i++) {
-			node = node.element(pathList[i]);
+		for (String s : pathList) {
+			node = node.element(s);
 		}
 		List<Element> parentNode = node.elements();
 		List<Node> listNode = listRootNode.content();

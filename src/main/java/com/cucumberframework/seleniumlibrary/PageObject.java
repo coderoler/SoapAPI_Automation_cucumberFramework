@@ -1,6 +1,5 @@
 package com.cucumberframework.seleniumlibrary;
 
-
 import org.openqa.selenium.WebDriver;
 
 public class PageObject {
@@ -29,8 +28,8 @@ public class PageObject {
 		driver.get(url);
 	}
 	
-	public void closeBorwser() {
-		System.out.println("close borwser");
+	public void closeBrowser() {
+		System.out.println("close browser");
 		driver.close();
 		driver.quit();
 	}

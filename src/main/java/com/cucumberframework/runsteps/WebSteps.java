@@ -8,7 +8,7 @@ import cucumber.api.java.en.Then;
 public class WebSteps extends BaseSteps{
 
 	private PageObject po = BaseSteps.po;
-	
+
 	@Given("^open web page$")
 	public void getPage() {
 		po.getPage("http://www.google.com");
@@ -16,6 +16,7 @@ public class WebSteps extends BaseSteps{
 	
 	@Then("^close browser$")
 	public void closeBrowser() {
-		po.closeBorwser();
+		po.closeBrowser();
 	}
+
 }

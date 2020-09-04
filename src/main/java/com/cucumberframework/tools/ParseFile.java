@@ -18,7 +18,7 @@ public class ParseFile {
 		String temp = null;
 		StringBuffer xmlParam = new StringBuffer();
 		File file = new File(System.getProperty("user.dir") + File.separator + "xmlTemplate" + File.separator
-				+ BaseSteps.xmlTempleteFolder + File.separator + name + ".xml");
+				+ BaseSteps.xmlTemplateFolder + File.separator + name + ".xml");
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			while ((temp = reader.readLine()) != null) {
@@ -83,10 +83,10 @@ public class ParseFile {
 
 	}
 	
-	public static void main(String arg[]) {
-		
-		Properties properties = ParseFile.getProperties(System.getProperty("user.dir") + File.separator + "configure" + File.separator + "env_1.properties");
-		System.err.println(properties.get("cli"));
-	}
+//	public static void main(String arg[]) {
+//
+//		Properties properties = ParseFile.getProperties(System.getProperty("user.dir") + File.separator + "configure" + File.separator + "env_1.properties");
+//		System.err.println(properties.get("cli"));
+//	}
 
 }
